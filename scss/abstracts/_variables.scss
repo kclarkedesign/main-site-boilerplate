@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Primary Font Styles ==================================
+$base-font-family: 'Lato', Arial, sans-serif;
+$base-font-size: 16px !default;
+$base-text-color: #464646 !default;
+
+// Primary Colors ==================================
+$primary-link-color: #4076bb !default;
+$primary-hover-color: #265796 !default;
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
