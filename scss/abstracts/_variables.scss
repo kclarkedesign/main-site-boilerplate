@@ -6,15 +6,26 @@
 $base-font-family: 'Lato', Arial, sans-serif;
 $base-font-size: 16px !default;
 $base-text-color: #464646 !default;
+$base-nav-font-weight: bold !default;
 
 // Primary Colors ==================================
 $primary-link-color: #4076bb !default;
 $primary-hover-color: #265796 !default;
 
+//Main Header Navigation ==================================
+$header-text-color: #ffffff !default;
+$header-bg-hover-color: #8EBADF !default;
+$header-icon-text-size: 0.8em !default;
 
-
+$primary-nav-bg-color: #000000 !default;
+$secondary-nav-bg-color: #ffffff !default;
+$secondary-nav-bg-hover-color: #cccccc !default;
+$secondary-nav-text-color: #ffffff !default;
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
+///$base-url: '/assets/' !default;
+
+// Font Awesome ==================================
+@fa-font-path:   "vendor/font-awesome/font-awesome";

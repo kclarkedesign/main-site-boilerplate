@@ -14,4 +14,15 @@ a {
 	&:hover {
 		color: $primary-hover-color;
 	}
+	&, &:hover, &:visited, &:active, &:focus {
+		text-decoration: none;
+		outline: 0;
+	} 
+}
+main {
+    margin-top: 50px;
+
+    .double-nav & {
+    	margin-top: 100px;
+    }
 }

@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Red Theme Sass variables.
+$theme-className: red-theme;
+$secondary-nav-bg-color: #fe0000;
+$secondary-nav-bg-hover-color: #b60001;
+//$red-theme-secondary-color: #b60001 !default;
+// -----------------------------------------------------------------------------
+.#{$theme-className} {
+	& #secondary-nav {
+    background-color: $secondary-nav-bg-color;
+
+		& a {
+			
+			&:hover {
+				background-color: $secondary-nav-bg-hover-color;
+			}
+		}
+	}
+}

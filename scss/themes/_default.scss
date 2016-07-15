@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Default Theme Sass variables.
+$secondary-nav-bg-color: #e4e4e4;
+// -----------------------------------------------------------------------------
+#secondary-nav {
+    background-color: $secondary-nav-bg-color;
+}

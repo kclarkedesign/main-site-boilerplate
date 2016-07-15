@@ -6,6 +6,514 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		
+		<div class="app">
+			<header id="header" class="header navbar navbar-fixed-top">
+				<div id="primary-nav" class="container container-fluid-max-lg">
+					<div class="brand top-nav text-center">
+						<div id="site-brand-menu">
+							<a href="/" id="logo-anchor" class="navbar-brand">
+								<img src="img/sitelogo_92Y-1.png" alt=""/>
+								<span class="label nav-label-beta navbar-text">Beta</span>
+							</a>
+							<!-- <ul class="nav navbar-nav navbar-left hidden-md hidden-lg">
+								<li>
+									<a id="interest-list-mobile" href="#" class="">
+										<span class="bubble"></span><i class="fa fa-th-list"></i><span class="btnTitle">Interests</span>
+									</a>
+								</li>
+								<li>
+									<a id="interest-list" href="javascript:;" dropdown-toggle ng-disabled="disabled" class="dropdown-toggle" ng-click="navListCtrl.navOpened = !navListCtrl.navOpened">
+										<span class="bubble"></span><i class="fa fa-search"></i><span class="btnTitle">Search</span>
+									</a>
+								</li>
+							</ul> -->
+						</div>
+						<nav class="navbar-collapse collapse pull-left pl0 pr0" id="hor-menu" ng-class="navListCtrl.navOpened && 'in'">
+							<!-- <div class="nav-header pull-right">
+								<span class="dropdown-header first-header visible-xs visible-sm collapse">Search</span>
+							</div> -->
+							<div class="scrollable-wrapper">
+								<div class="scrollable container-fluid no-p">
+									<!-- <a id="mainNavBtnTwo" class="mr5 c-hamburger c-hamburger--htx navbar-toggle visible-xs visible-xs visible-sm collapsed" data-toggle="collapse" ng-click="navListCtrl.navOpened = !navListCtrl.navOpened" ng-class="navListCtrl.navOpened ? 'is-active' : ''">
+										<span>toggle menu</span>
+									</a> -->
+									<ul id="main-navigation" class="nav navbar-nav">
+										<!--  <li class="col-xs-12 visible-xs visible-sm collapse pb10">
+											<input id="mobile-searchGlobal" enable-search-enter type="text" class="mt10 mb5 form-control" placeholder="Search by Instructor, Title or Keyword" ng-show="navListCtrl.allClasses[0].NodeID !== 0" ng-model="navListCtrl.textboxGlobalSearch" ng-change="navListCtrl.searchGlobal()" ng-class="{'active': navListCtrl.textboxGlobalSearch.length && !navListCtrl.showGlobalSpinner, 'spinnerInTextbox': navListCtrl.showGlobalSpinner}" />
+											<a class="glyphicon glyphicon-remove-sign form-control-feedback form-control-clear" ng-click="navListCtrl.clearSearch(false);" style="pointer-events: auto; text-decoration: none;cursor: pointer; text-align: left; position: absolute; right: 20px; top: 14px; padding: 0 0 0 5px; background: transparent;"></a>
+											<div class="mobile-flyout-container" ng-show="navListCtrl.textboxGlobalSearch.length > 0">
+												<div id="mobile-searchGlobal-flyout" class="">
+													<span class="s-items s-plainText" ng-show="navListCtrl.showNoGlobalResults" ng-click="navListCtrl.clearSearch(false);">No results were found</span>
+													<a class="s-items" ng-repeat="sr in navListCtrl.displaySearchResults" ng-click="navListCtrl.prepareSearchRedirect(sr.interestArea)" ng-href="">
+														<span class="s-term">{{sr.searchTerm}}
+														</span>
+														<span class="s-plainText">in
+														</span>
+														<span class="s-interestArea" ng-bind-html="sr.interestArea | unsafe"></span>
+													</a>
+												</div>
+											</div>
+										</li> -->
+										<li class="active">
+											<a href="/soa.html">
+												<span>SOA</span>
+												<span class="sr-only">(current)</span>
+											</a>
+										</li>
+										<li class="dropdown mega-dropdown" dropdown >
+											<a href="" role="button" class="dropdown-toggle" dropdown-toggle>
+												<span>Programs</span>
+												<i class="fa fa-chevron-down"></i>
+											</a>
+											<ul class="dropdown-menu mega-dropdown-menu row">
+												
+												<li class="interest-wrapper container seven-cols" style="margin: auto;">
+													<ul class="col-sm-12 no-p">
+														<li class="dropdown-header">EXPLORE OUR PROGRAMS</li>
+													</ul>
+													<div class="container-fluid">
+														<div class="row">
+															<ul class="interest-col col-sm-2" >
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">Talks &amp; Readings</span>
+																	</a>
+																	<ul class="col-sm-12 pt5 pl0 pr0 sub">
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Talks</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Readings</span>
+																			</a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul class="interest-col col-sm-2" >
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">Performing Arts</span>
+																	</a>
+																	<ul class="col-sm-12 pt5 pl0 pr0 sub">
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>All Concerts</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Classical Concerts</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Jazz &amp; Popular Concerts</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Family Concerts</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Dance Performances</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Special Events</span>
+																			</a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul class="interest-col col-sm-2" >
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">School of the Arts</span>
+																	</a>
+																	<ul class="col-sm-12 pt5 pl0 pr0 sub">
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Ceramics</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Dance</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Fine Art &amp; Design</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Jewelry</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Music</span>
+																			</a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul class="interest-col col-sm-2" >
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">Continuing Ed</span>
+																	</a>
+																	<ul class="col-sm-12 pt5 pl0 pr0 sub">
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Professional Development</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Food &amp; Wine</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Games &amp; Crafts</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Tours &amp; Excursions</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Languages</span>
+																			</a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul class="interest-col col-sm-2" >
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">Health &amp; Fitness</span>
+																	</a>
+																	<ul class="col-sm-12 pt5 pl0 pr0 sub">
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Membership</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Aquatics</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Sports &amp; Gymnastics</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Personalized Services</span>
+																			</a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul class="interest-col col-sm-2" >
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">Jewish Life</span>
+																	</a>
+																	<ul class="col-sm-12 pt5 pl0 pr0 sub">
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Holidays, Shabbat, &amp; Celebrations</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Education</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Arts &amp; Ideas</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Programs in Hebrew</span>
+																			</a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul class="interest-col col-sm-2" >
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">Kids &amp; Family</span>
+																	</a>
+																	<ul class="col-sm-12 pt5 pl0 pr0 sub">
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>92Y Camps</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Shababa</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Wonderplay</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Parenting Center</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Gymnastics</span>
+																			</a>
+																		</li>
+																		<li class="dropdown">
+																			<a href="javascript:;">
+																				<span>Special Needs</span>
+																			</a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</div>
+
+													</div>
+													<div class="container-fluid">
+														<div class="row">
+															<div role="separator" class="divider col-md-12"></div>
+															<ul class="interest-col more-sub">
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">Himan Brown Senior Program</span></a>
+																</li>
+															</ul>
+															<ul class="interest-col more-sub">
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">Educational Outreach</span></a>
+																</li>
+															</ul>
+															<ul class="interest-col more-sub">
+																<li class="tile">
+																	<a href="javascript:;" class="no-p"><span class="interest-title">92YResidence: Student/Intern Housing</span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown" dropdown="">
+											<a href="" role="button" class=""><span>On Demand</span></a>
+										</li>
+										<li class="dropdown mega-dropdown" dropdown="">
+											<a href="" role="button" class=""><span>About</span></a>
+										</li>
+										<li class="dropdown mega-dropdown" dropdown="">
+											<a href="" role="button" class=""><span>Support</span></a>
+										</li>
+										<li class="dropdown mega-dropdown hidden-xs hidden-sm" dropdown="">
+							                <a id="search-dropdown" href="javascript:;" dropdown-toggle="" ng-disabled="disabled" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+							                    <span><i class="fa fa-search"></i></span><!-- <span class="btnTitle">Search</span> -->
+							                </a>
+							            </li>
+										<!-- <a progress-bar-increment role="button" class="dropdown-toggle pt10 pb10" ng-class="{'active': navListCtrl.activeBreadcrumb[0].Name === sl.Name}" ng-click="navListCtrl.getInterestItems(navListCtrl.interestClicked, sl); navListCtrl.navOpened = false;">
+											<span ng-bind-html="sl.Name | unsafe"></span>
+										</a> -->
+										<!-- For use when account becomes available -->
+										<!-- <li class="col-xs-6 col-sm-6 col-md-4 col-lg-3 pl0 pr0 visible-xs visible-sm collapse button-left">
+											<a href="/account/accountupdate.aspx?tab=2"><span class="btnTitle"><i class="fa fa-user"></i> Hi, User</span></a>
+										</li> -->
+										<!-- <li class="col-xs-6 col-sm-6 col-md-4 col-lg-3 pl0 pr0 visible-xs visible-sm collapse button-right">
+											<a><span class="btnTitle"><i class="fa fa-sign-out"></i>  Log Out</span></a>
+										</li> -->
+										<!-- Vertical Nav item -->
+										<!--  <li id="eventClassFinder" class="iconBtn-vertical dropdown mega-dropdown hidden-xs hidden-sm" dropdown is-open="navListCtrl.eventClassDropdown.isopen">
+											<a id="interest-list" href="" dropdown-toggle ng-disabled="disabled" class="dropdown-toggle"><span class="bubble"></span><i class="fa fa-th-list"></i><span class="btnTitle">Interests</span></a>
+											<ul class="dropdown-menu mega-dropdown-menu row" ng-click="$event.stopPropagation()">
+												<li class="container" style="margin: auto;">
+													<ul class="col-sm-12 no-p">
+														<li class="dropdown-header">Explore Programs by Interest
+															<img src='http://www.92y.org/_ui/tribeca/img/loading.gif' ng-show="navListCtrl.allClasses[0].NodeID === 0" />
+														</li>
+														<li class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pl0 pr0" ng-repeat="sl in navListCtrl.allClasses"><a ng-click="navListCtrl.getInterestItems(navListCtrl.interestClicked, sl);" ng-bind-html="sl.Name | unsafe" ng-class="{'active': navListCtrl.activeBreadcrumb[0].Name === sl.Name}"></a></li>
+													</ul>
+												</li>
+											</ul>
+										</li> -->
+										<!--  <li class="iconBtn-vertical dropdown mega-dropdown hidden-xs hidden-sm" dropdown>
+											<a id="search-dropdown" href="javascript:;" dropdown-toggle ng-disabled="disabled" class="dropdown-toggle">
+												<span class="bubble"></span><i class="fa fa-search"></i><span class="btnTitle">Search</span>
+											</a>
+											<ul class="dropdown-menu mega-dropdown-menu row" ng-click="$event.stopPropagation()">
+												<li class="container" style="margin: auto;">
+													<div class="col-xs-12 no-p">
+														<input id="searchGlobal" type="text" enable-search-enter class="mt5 mb5 form-control"
+														placeholder="Search by Instructor, Title or Keyword" ng-show="navListCtrl.allClasses[0].NodeID !== 0"
+														ng-model="navListCtrl.textboxGlobalSearch" ng-change="navListCtrl.searchGlobal()"
+														ng-class="{'active': navListCtrl.textboxGlobalSearch.length && !navListCtrl.showGlobalSpinner, 'spinnerInTextbox': navListCtrl.showGlobalSpinner}" />
+														<a class="glyphicon glyphicon-remove-sign form-control-feedback form-control-clear" ng-click="navListCtrl.clearSearch(false);" style="pointer-events: auto; text-decoration: none;cursor: pointer; text-align: left; top: 9px; left: 8px"></a>
+														<div role="separator" class="divider"></div>
+														<div class="gs-hint pb5" ng-show="navListCtrl.displaySearchResults.length > 0 && navListCtrl.textboxGlobalSearch.length > 0">View results for '{{navListCtrl.textboxGlobalSearch}}' in
+														</div>
+														<div id="searchGlobal-list" class="col-md-12 no-p tile" ng-show="navListCtrl.textboxGlobalSearch.length > 0">
+															<span class="s-plainText" ng-show="navListCtrl.showNoGlobalResults">Sorry, no results found</span>
+															<a class="" ng-repeat="sr in navListCtrl.displaySearchResults" ng-click="navListCtrl.prepareSearchRedirect(sr.interestArea)">
+																<span class="interest-title" ng-bind-html="sr.interestArea | unsafe"></span>
+															</a>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li> -->
+										
+									</ul>
+								</div>
+							</div>
+						</nav>
+						<!-- <ul id="action-container" class="nav navbar-nav navbar-right">
+								<li id="navSavedBtn" wish-list ng-class="{'active': navListCtrl.savedSearches.length || navListCtrl.savedPrograms.length}" class="notifications dropdown shake">
+										<a href="javascript:;" data-toggle="dropdown"><span class="bubble"></span><i class="fa fa-heart"></i><span class="btnTitle">Wish List</span></a>
+								</li>
+						</ul> -->
+					</div>
+				</div>
+				<!-- <div id="secondary-nav" class="header navbar">
+					<div class="container">
+						<nav id="ms-nav" class="pl0 pr0">
+							<div class="scrollable-wrapper">
+								<div class="scrollable container-fluid no-p">
+									<a id="mainNavBtnTwo" class="mr5 c-hamburger c-hamburger--htx navbar-toggle visible-xs visible-xs visible-sm collapsed" data-toggle="collapse" ng-click="navListCtrl.navOpened = !navListCtrl.navOpened" ng-class="navListCtrl.navOpened ? 'is-active' : ''">
+										<span>toggle menu</span>
+									</a>
+									<ul id="ms-menu" class="nav navbar-nav full-width">
+										<li class="active"><a href="/soa.html">SOA<span class="sr-only">(current)</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+					</div>
+				</div> -->
+			</header>
+			<main>
+				
+				<section class="section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<h1>Section 1</h1>
+							</div>
+							<div class="col-md-6">
+								<div class="img-placeholder">
+									
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="text-placeholder">
+									<p>
+										The ampersand combined with nesting is a great feature. Once you know what it's doing, authoring your Sass can become easier, faster, and less error-prone.
+									</p>
+									<p>
+										This is nice. From an organizational perspective, all the code is still grouped together, which could be noted as an unsung benefit of nesting. @at-root can help keep specificity levels low because you no longer have the compiled parent selector to increase specificity. All the while still keeping your code conceptually organized with nesting:
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Section 2</h1>
+							</div>
+							<div class="col-md-6">
+								<div class="img-placeholder">
+									
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="text-placeholder">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Section 3</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Section 4</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Section 5</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Section 6</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Section 7</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Section 8</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer>
+			</footer>
+		</div>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="js/vendor/headroom-0-9-3.js" type="text/javascript"></script>
+		<script src="js/vendor/jquery.headroom.js" type="text/javascript"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="js/app.js" type="text/javascript"></script>
 	</body>
 </html>

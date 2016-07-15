@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navigation of the site/application.
+// -----------------------------------------------------------------------------
+
+#main-navigation a>span {
+    color: $header-text-color;
+    font-weight: $base-nav-font-weight;
+}
+.header,
+#mainNavSidebar {
+	.nav {
+		&>li>a:hover,
+		&>li>a:focus,
+		& .open>a:hover,
+		& .open>a:focus, {
+			background-color: $header-bg-hover-color;
+		}
+	}
+}
+.navbar-nav>li.iconBtn-vertical>a {
+	padding: 7px;
+	line-height: 18px;
+	font-size: 14px;
+	min-width: 70px;
+	height: 50px;
+}
+
+#secondary-nav {
+	margin: 0;
+	background-color: $secondary-nav-bg-color;
+	
+	& a,
+	& button,
+	& li>a {
+		color: $secondary-nav-text-color;
+	}
+	.navbar-toggle {
+		padding: 13px 10px;
+		margin: 0;
+	}
+	
+}
+ 
