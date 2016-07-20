@@ -2,12 +2,54 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
+@mixin preserve-3d($preserve-3d) {
+  -webkit-transform-style: $preserve-3d;
+  -moz-transform-style: $preserve-3d;
+  transform-style: $preserve-3d;
+}
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
   border-radius: $radius;
   background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin background-clip($clip...) {
+  $output: ();
+  $deprecated: ();
+  @if length($clip) > 0 {
+    @each $layer in $clip {
+      $output: append($output, unquote($layer), comma);
+      $deprecated: append($deprecated, legacy-box($layer), comma);
+    }
+  }
+  @else {
+    $output: $default-background-clip;
+    $deprecated: legacy-box($default-background-clip);
+  }
+  // @include with-each-prefix(background-img-opts, $background-clip-support-threshold) {
+  //   @if $current-prefix == -moz or $current-prefix == -webkit {
+  //     // Legacy versions of Mozilla support a different syntax, prefixed.
+  //     @include prefix-prop(background-clip, $deprecated);
+  //   }
+  //   @else {
+  //     @include prefix-prop(background-clip, $output);
+  //   }
+  // }
 }
 
 @mixin transform-translateY($pixels) {
@@ -19,11 +61,11 @@
 }
 
 @mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
 }
 
 @mixin keyframes($animation-name) {

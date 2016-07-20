@@ -4,6 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
 		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/modernizr.custom.js"></script>
 	</head>
 	<body>
 		<div class="app">
@@ -61,7 +62,7 @@
 											</a>
 										</li>
 										<li class="dropdown mega-dropdown" dropdown >
-											<a href="" role="button" class="dropdown-toggle" dropdown-toggle>
+											<a href="" role="button" class="dropdown-toggle" data-toggle="dropdown">
 												<span>Programs</span>
 												<i class="fa fa-chevron-down"></i>
 											</a>
@@ -324,11 +325,7 @@
 										<li class="dropdown mega-dropdown" dropdown="">
 											<a href="" role="button" class=""><span>Support</span></a>
 										</li>
-										<li class="dropdown mega-dropdown hidden-xs hidden-sm" dropdown="">
-							                <a id="search-dropdown" href="javascript:;" dropdown-toggle="" ng-disabled="disabled" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-							                    <span><i class="fa fa-search"></i></span><!-- <span class="btnTitle">Search</span> -->
-							                </a>
-							            </li>
+										
 										<!-- <a progress-bar-increment role="button" class="dropdown-toggle pt10 pb10" ng-class="{'active': navListCtrl.activeBreadcrumb[0].Name === sl.Name}" ng-click="navListCtrl.getInterestItems(navListCtrl.interestClicked, sl); navListCtrl.navOpened = false;">
 											<span ng-bind-html="sl.Name | unsafe"></span>
 										</a> -->
@@ -383,6 +380,15 @@
 								</div>
 							</div>
 						</nav>
+						<nav>
+							<ul id="utility-navigation" class="nav navbar-nav navbar-right">
+								<li class="dropdown mega-dropdown" dropdown="">
+					                <a id="trigger-overlay" href="javascript:;" dropdown-toggle="" ng-disabled="disabled" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+					                    <span><i class="fa fa-search"></i></span><!-- <span class="btnTitle">Search</span> -->
+					                </a>
+					            </li>
+							</ul>
+						</nav>
 						<!-- <ul id="action-container" class="nav navbar-nav navbar-right">
 								<li id="navSavedBtn" wish-list ng-class="{'active': navListCtrl.savedSearches.length || navListCtrl.savedPrograms.length}" class="notifications dropdown shake">
 										<a href="javascript:;" data-toggle="dropdown"><span class="bubble"></span><i class="fa fa-heart"></i><span class="btnTitle">Wish List</span></a>
@@ -408,7 +414,19 @@
 				</div> -->
 			</header>
 			<main>
-				
+				<!-- Slider Placeholder -->
+				<section class="slider-placeholder">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-12 no-p">
+								<div class="center-placeholder-text">
+									<div class="text-placeholder">Slider</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- /End Slider Placeholder -->
 				<section class="section-padding">
 					<div class="container">
 						<div class="row">
@@ -433,7 +451,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="section-padding">
+				<section class="section-padding section-light">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
@@ -461,7 +479,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="section-padding">
+				<section class="section-padding section-dark">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
@@ -479,7 +497,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="section-padding">
+				<section class="section-padding section-light">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
@@ -497,7 +515,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="section-padding">
+				<section class="section-padding section-dark">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
@@ -509,11 +527,59 @@
 			</main>
 			<footer>
 			</footer>
+			<!-- open/close -->
+			<div class="overlay overlay-hugeinc">
+				<div class="container">
+					<div class="row">
+						<button type="button" class="overlay-close col-sm-4 pull-right">Close</button>
+						<nav class="">
+							<ul class="nav navbar-nav full-width">
+								<li class="col-xs-9"><input type="text" class="form-control"placeholder="Search by Instructor, Title or Keyword"></li>
+								<li>
+									<div class="col-sm-4 text-placeholder">Item 1</div>
+									<div class="col-sm-4 text-placeholder">Item 2</div>
+									<div class="col-sm-4 text-placeholder">Item 3</div>
+									<div class="col-sm-4 text-placeholder">Item 4</div>
+									<div class="col-sm-4 text-placeholder">Item 5</div>
+								</li>
+								<li>
+									<section class="section-padding">
+										<div class="container">
+											<div class="row">
+												<div class="col-sm-3 text-placeholder">
+													<div class="img-placeholder"></div>
+													Title
+												</div>
+												<div class="col-sm-3 text-placeholder">
+													<div class="img-placeholder"></div>
+													Title
+												</div>
+												<div class="col-sm-3 text-placeholder">
+													<div class="img-placeholder"></div>
+													Title
+												</div>
+												<div class="col-sm-3 text-placeholder">
+													<div class="img-placeholder"></div>
+													Title
+												</div>
+											</div>
+										</div>
+									</section>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!-- / open/close -->
 		</div>
+		
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 		<script src="js/vendor/headroom-0-9-3.js" type="text/javascript"></script>
 		<script src="js/vendor/jquery.headroom.js" type="text/javascript"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="js/vendor/classie.js" type="text/javascript"></script>
+		<script src="js/vendor/demo1.js" type="text/javascript"></script>
 		<script src="js/app.js" type="text/javascript"></script>
 	</body>
 </html>

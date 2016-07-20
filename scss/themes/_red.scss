@@ -21,4 +21,12 @@ $secondary-nav-bg-hover-color: #b60001;
 			}
 		}
 	}
+	a,
+	.browse-item {
+		color: $secondary-nav-bg-color;
+	}
+	.list-lg .getLink {
+		background: $secondary-nav-bg-color;
+	}
+	
 }

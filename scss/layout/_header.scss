@@ -60,7 +60,20 @@
 .double-nav {
 	.headroom {
 		&--unpinned {
-			@include transform-translateY(-50%);
+			@include transform-translateY(-50px);
+			
+			// & #utility-navigation {
+			// 		position: relative;
+			// }
+			// & #trigger-overlay {
+			// 		position: absolute;
+			// 		top: 50px;
+			// }
+
+
+			& #primary-nav {
+				@include transform-translateY(-50px);
+			}
 		}
 	}
 }

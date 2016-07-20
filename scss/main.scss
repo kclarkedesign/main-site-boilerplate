@@ -28,7 +28,9 @@
 // 5. Components
 @import
   'components/button',
-  'components/layout-helpers';
+  'components/layout-helpers',
+  'components/overlay',
+  'components/overlay-fullscreen';
 
 // 6. Page-specific styles
 @import

@@ -1,0 +1,34 @@
+// Layout Helpers for Mocking
+
+.overlay-hugeinc {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+	
+	& nav {
+		perspective: 1200px;
+
+		& ul {
+			opacity: 0.4;
+			transform: translateY(-25%) rotateX(35deg);
+			transition: transform 0.5s, opacity 0.5s;
+		}
+	}
+
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.5s;
+
+		& nav ul {
+			opacity: 1;
+			transform: rotateX(0deg);
+		}
+	}
+
+	&.close nav ul {
+		transform: translateY(25%) rotateX(-35deg);
+	}
+	
+}
+
